@@ -76,13 +76,9 @@ public class AgentSystem extends LWJGLBasisFenster {
 
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glLoadIdentity();
-//			glFrustum(-1, 1, -1, 1, 4, 10);
-//			glTranslated(0, 0, -5);
-//			glRotatef((float) t * 100, 1, 0, 0);
-//			glRotatef((float) t * 100, 0, 1, 0);
-//			glScaled(1./object.size, 1./object.size, 1./object.size);
-//			glScaled(1./5, 1./5, 1./5);
-//			glColor3d(0, .7 + 0.3 * Math.sin(t), 0);
+			//glOrtho(0, WIDTH, HEIGHT, 0, 0, 1);
+			glMatrixMode(GL_MODELVIEW);
+			glDisable(GL_DEPTH_TEST);
 
 
 			for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
