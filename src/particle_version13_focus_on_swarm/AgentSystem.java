@@ -64,14 +64,26 @@ public class AgentSystem extends LWJGLBasisFenster {
 			runningAverageFrameTime = avgRatio * runningAverageFrameTime + (1 - avgRatio) * diff;
 			last = now;
 
-			glClearColor(0.95f, 0.95f, 0.95f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
+//			glClearColor(0.95f, 0.95f, 0.95f, 1.0f);
+//			glClear(GL_COLOR_BUFFER_BIT);
+//
+//			glMatrixMode(GL_PROJECTION);
+//			glLoadIdentity();
+//			glOrtho(0, WIDTH, HEIGHT, 0, 0, 1);
+//			glMatrixMode(GL_MODELVIEW);
+//			glDisable(GL_DEPTH_TEST);
 
-			glMatrixMode(GL_PROJECTION);
+
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glLoadIdentity();
-			glOrtho(0, WIDTH, HEIGHT, 0, 0, 1);
-			glMatrixMode(GL_MODELVIEW);
-			glDisable(GL_DEPTH_TEST);
+//			glFrustum(-1, 1, -1, 1, 4, 10);
+//			glTranslated(0, 0, -5);
+//			glRotatef((float) t * 100, 1, 0, 0);
+//			glRotatef((float) t * 100, 0, 1, 0);
+//			glScaled(1./object.size, 1./object.size, 1./object.size);
+//			glScaled(1./5, 1./5, 1./5);
+//			glColor3d(0, .7 + 0.3 * Math.sin(t), 0);
+
 
 			for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
 				Agent aktAgent = agentenSpielwiese.getAgent(i);
