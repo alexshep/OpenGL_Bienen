@@ -1,3 +1,5 @@
+package dep;
+
 import org.lwjgl.util.vector.Vector3f;
 
 public class FaceTriangle {

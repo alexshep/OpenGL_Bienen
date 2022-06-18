@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/FaceQuad.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/FaceTriangle.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/LWJGLBasisFenster.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/LineareAlgebra.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Model.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/POGL.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Torus.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Vektor2D.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Vektor3D.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/Weg2DDynamisch.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/FaceQuad.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/FaceQuad.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/FaceTriangle.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/FaceTriangle.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/LWJGLBasisFenster.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/LWJGLBasisFenster.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/LineareAlgebra.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/LineareAlgebra.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Model.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Model.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/POGL.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/POGL.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Torus.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Torus.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Vektor2D.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Vektor2D.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Vektor3D.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Vektor3D.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Weg2DDynamisch.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/Weg2DDynamisch.java" charset="windows-1252" />
   </component>
 </project>

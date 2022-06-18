@@ -1,3 +1,6 @@
+import dep.LWJGLBasisFenster;
+import dep.Model;
+import dep.POGL;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 
@@ -57,7 +60,7 @@ public class ObjektAusViereckenLadenUndDrehen extends LWJGLBasisFenster {
 	         glScaled(1./object.size, 1./object.size, 1./object.size);
 	         glScaled(1./5, 1./5, 1./5);
 	         glColor3d(0, .7 + 0.3 * Math.sin(t), 0);
-	         POGL.renderObjectVierecke(object);			
+	         POGL.renderObjectVierecke(object);
 	         Display.update();
 	      }
 	}
@@ -65,6 +68,6 @@ public class ObjektAusViereckenLadenUndDrehen extends LWJGLBasisFenster {
 	public static void main(String[] args) throws LWJGLException {
 		//new ObjektAusViereckenLadenUndDrehen("src/kapitel01/loesungen/CubeQuads.obj", 0.5f).start();		//Würfel
 		new ObjektAusViereckenLadenUndDrehen("res/TorusQuads.obj", 1.1f/*5*/).start();		//Element aus CGV1 Projekt
-		//new ObjektAusViereckenLadenUndDrehen("src/kapitel01/loesungen/TorusQuads.obj", 40/*5*/).start();		//Torus
+		//new ObjektAusViereckenLadenUndDrehen("src/kapitel01/loesungen/TorusQuads.obj", 40/*5*/).start();		//dep.Torus
 	}
 }

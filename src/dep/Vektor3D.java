@@ -1,3 +1,5 @@
+package dep;
+
 public class Vektor3D {
 	public double x, y, z;
 

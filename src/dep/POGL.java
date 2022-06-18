@@ -1,3 +1,4 @@
+package dep;
 
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
@@ -7,7 +8,7 @@ import java.io.*;
 
 import static org.lwjgl.opengl.GL11.*;
 
-// POGL = "Primitives of OpenGL" 
+// dep.POGL = "Primitives of OpenGL"
 public class POGL {
 	private POGL() {
 	}

@@ -1,3 +1,5 @@
+package dep;
+
 public class LineareAlgebra {
 	private LineareAlgebra() {};
 

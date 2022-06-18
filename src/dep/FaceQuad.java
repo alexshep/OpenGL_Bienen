@@ -1,3 +1,5 @@
+package dep;
+
 import org.lwjgl.util.vector.Vector4f;
 
 public class FaceQuad {

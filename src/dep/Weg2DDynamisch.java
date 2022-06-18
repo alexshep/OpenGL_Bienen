@@ -1,3 +1,5 @@
+package dep;
+
 import java.util.ArrayList;
 
 public class Weg2DDynamisch {
