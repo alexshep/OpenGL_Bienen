@@ -39,15 +39,7 @@ public class Agent extends BewegendesObjekt {
 	public void render() {
 		//POGL.renderSwarmObjectWithForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration());
 
-		glFrustum(-1, 1, -1, 1, 4, 10);
-		glTranslated(0, 0, -5);
-		glRotatef( 90, 1, 0, 0);
-		glScaled(1./object.size, 1./object.size, 1./object.size);
-		glScaled(1./5, 1./5, 1./5);
-		glColor3d(0, .3 , 0.1);
-
-
-		POGL.renderObjectVierecke(object);
+		POGL.renderModelWithForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration(), object);
 	}
 
 	//eigener Bullshit
