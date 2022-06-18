@@ -1,9 +1,14 @@
 package particle_version13_focus_on_swarm;
 
 import dep.LWJGLBasisFenster;
+import dep.Model;
+import dep.POGL;
 import dep.Vektor2D;
 import org.lwjgl.opengl.Display;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -14,12 +19,17 @@ public class AgentSystem extends LWJGLBasisFenster {
 	private double runningAverageFrameTime = 1/60, avgRatio = 0.75;
 	private long last = System.nanoTime();
 
+
 	public AgentSystem(String title, int width, int height) {
         super(title, width, height);
 		initDisplay();
 		agentenSpielwiese = ObjektManager.getExemplar();
 		erzeugeAgenten(10);
 	}
+
+
+
+
 
 	private void erzeugeAgenten(int anz) {
 		Random rand = ThreadLocalRandom.current();
