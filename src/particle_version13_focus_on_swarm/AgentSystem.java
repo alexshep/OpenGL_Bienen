@@ -24,7 +24,7 @@ public class AgentSystem extends LWJGLBasisFenster {
         super(title, width, height);
 		initDisplay();
 		agentenSpielwiese = ObjektManager.getExemplar();
-		erzeugeAgenten(1);
+		erzeugeAgenten(10);
 	}
 
 
@@ -36,8 +36,8 @@ public class AgentSystem extends LWJGLBasisFenster {
 
 		for (int i = 0; i < anz; i++) {
 			Agent agent = new Agent(
-					new Vektor2D(rand.nextInt(WIDTH), rand.nextInt(HEIGHT)),
-					new Vektor2D(rand.nextFloat()*20, 0), 10, 1f, 1f, 1f);
+					new Vektor2D(rand.nextInt(WIDTH/8), rand.nextInt(HEIGHT/8)), //Integer zwischen 0 und max Bildhöhe/-breite
+					new Vektor2D(rand.nextFloat()*1, rand.nextFloat()*1), 10, 1f, 1f, 1f);
 			agent.setVerhalten(new VerhaltenAgent(agent));
 			agent.setObjektManager(agentenSpielwiese);
 			agentenSpielwiese.registrierePartikel(agent);
@@ -97,6 +97,6 @@ public class AgentSystem extends LWJGLBasisFenster {
 
 	public static void main(String[] args) {
        new AgentSystem("vividus Verlag. Dino-Buch. Kap. 1 (particle_version13_focus_on_swarm): AgentSystem.java",
-             800, 450).start();
+             1600, 900).start();
 	}
 }

@@ -15,7 +15,7 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 	public double MAX_TURN_RATE;
 	public double SWARM_DISTANZ;
 	public int WIDTH;
-	public int HEIGTH;
+	public int HEIGHT;
 	public Weg2DDynamisch wegHistorie;
 	
 	public Verhalten verhalten = null;
@@ -92,11 +92,11 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 	}
 
 	public int getHeight() {
-		return HEIGTH;
+		return HEIGHT;
 	}
 
 	public void setHeight(int height) {
-		this.HEIGTH = height;
+		this.HEIGHT = height;
 	}
 
 	public void resetAcceleration() {

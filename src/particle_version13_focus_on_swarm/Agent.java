@@ -23,10 +23,10 @@ public class Agent extends BewegendesObjekt {
 		loadObjectVierecke("res/TorusQuads.obj");
 		object.size = 1.5f;
 
-		setMass(1);
+		setMass(0.5);
 		setMaxSpeed(100);
-		setMaxTurnRate(15);
-		setSwarmDistanz(100);
+		setMaxTurnRate(40);
+		setSwarmDistanz(50);
 
 		setWegHistorie(new Weg2DDynamisch(20));
 	}
@@ -37,6 +37,7 @@ public class Agent extends BewegendesObjekt {
 
 	@Override
 	public void render() {
+		//POGL.renderKreis((float) position.x, (float) position.y, 5, 20);
 		//POGL.renderSwarmObjectWithForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration());
 
 		POGL.renderModelWithForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration(), object);
