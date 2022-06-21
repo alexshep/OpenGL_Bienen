@@ -73,6 +73,9 @@ public class AgentSystem extends LWJGLBasisFenster {
 //			glMatrixMode(GL_MODELVIEW);
 //			glDisable(GL_DEPTH_TEST);
 
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			//glClear löst das Problem, dass beim Neuzeichnen die alten Darstellungen nicht gelöscht werden
+
 
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glLoadIdentity();

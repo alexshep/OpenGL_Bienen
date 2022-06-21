@@ -52,6 +52,8 @@ public class ObjektAusViereckenLadenUndDrehen extends LWJGLBasisFenster {
 	         double t = (System.nanoTime() - start) / 1e9;
 	         POGL.clearBackgroundWithColor(1, 1, 1, 1);
 
+
+
 	         glLoadIdentity();
 	         glFrustum(-1, 1, -1, 1, 4, 10);
 	         glTranslated(0, 0, -5);
