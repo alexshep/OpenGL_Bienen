@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14594ec0-4176-43b7-8ff9-d30c8eb7d498" name="Changes" comment="initial shit">
+    <list default="true" id="14594ec0-4176-43b7-8ff9-d30c8eb7d498" name="Changes" comment="ja ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TorusQuads.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/bee.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/bee2.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObjektAusViereckenLadenUndDrehen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dep/POGL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dep/POGL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/AgentSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/AgentSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/VerhaltenAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/VerhaltenAgent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,20 +42,35 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/Schmutz/libs/lwjgl2/natives-win",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/Users/Alex/Desktop/Beleg5.0Abgabe",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Schmutz\src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AgentSystem">
+    <configuration name="AgentSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="particle_version13_focus_on_swarm.AgentSystem" />
+      <module name="Schmutz" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="particle_version13_focus_on_swarm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ObjektAusViereckenLadenUndDrehen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ObjektAusViereckenLadenUndDrehen" />
       <module name="Schmutz" />
@@ -50,6 +80,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AgentSystem" />
         <item itemvalue="Application.ObjektAusViereckenLadenUndDrehen" />
       </list>
     </recent_temporary>
@@ -62,7 +93,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655554104594</updated>
-      <workItem from="1655554106464" duration="1962000" />
+      <workItem from="1655554106464" duration="10156000" />
+      <workItem from="1655807818257" duration="862000" />
+      <workItem from="1655808725127" duration="2516000" />
+      <workItem from="1655825316865" duration="46000" />
+      <workItem from="1655825794452" duration="4174000" />
+      <workItem from="1655830446599" duration="138000" />
+      <workItem from="1655885701253" duration="2938000" />
     </task>
     <task id="LOCAL-00001" summary="initial shit">
       <created>1655554739629</created>
@@ -85,7 +122,77 @@
       <option name="project" value="LOCAL" />
       <updated>1655554938820</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor">
+      <created>1655556373502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655556373502</updated>
+    </task>
+    <task id="LOCAL-00005" summary="gitognore">
+      <created>1655556793945</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655556793945</updated>
+    </task>
+    <task id="LOCAL-00006" summary="bee triangulated">
+      <created>1655557340207</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655557340207</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mehr stuff hinzugefügt">
+      <created>1655557976248</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655557976248</updated>
+    </task>
+    <task id="LOCAL-00008" summary="mehr stuff hinzugefügt">
+      <created>1655559395381</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655559395381</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mehr stuff hinzugefügt">
+      <created>1655560497752</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655560497752</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mehr stuff hinzugefügt">
+      <created>1655561238410</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655561238410</updated>
+    </task>
+    <task id="LOCAL-00011" summary="minimal build oder so. kannst du eigentlich keinem zeigen">
+      <created>1655564035508</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655564035508</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixed render bug">
+      <created>1655808657098</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655808657098</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ja ok">
+      <created>1655810330117</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655810330117</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +211,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial shit" />
+    <MESSAGE value="refactor" />
+    <MESSAGE value="gitognore" />
+    <MESSAGE value="bee triangulated" />
+    <MESSAGE value="mehr stuff hinzugefügt" />
+    <MESSAGE value="minimal build oder so. kannst du eigentlich keinem zeigen" />
+    <MESSAGE value="fixed render bug" />
+    <MESSAGE value="ja ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="ja ok" />
   </component>
 </project>

@@ -1,14 +1,11 @@
 package particle_version13_focus_on_swarm;
 
 import dep.LWJGLBasisFenster;
-import dep.Model;
-import dep.POGL;
 import dep.Vektor2D;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.awt.geom.Line2D;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -20,15 +17,19 @@ public class AgentSystem extends LWJGLBasisFenster {
 	private long last = System.nanoTime();
 
 
+
+
+	Vektor2D currentMousePositionPress;
+	Vektor2D currentMousePositionRelease;
+	int mouseDown = 0;
+
+
 	public AgentSystem(String title, int width, int height) {
         super(title, width, height);
 		initDisplay();
 		agentenSpielwiese = ObjektManager.getExemplar();
-		erzeugeAgenten(10);
+		erzeugeAgenten(20);
 	}
-
-
-
 
 
 	private void erzeugeAgenten(int anz) {
@@ -64,22 +65,12 @@ public class AgentSystem extends LWJGLBasisFenster {
 			runningAverageFrameTime = avgRatio * runningAverageFrameTime + (1 - avgRatio) * diff;
 			last = now;
 
-//			glClearColor(0.95f, 0.95f, 0.95f, 1.0f);
-//			glClear(GL_COLOR_BUFFER_BIT);
-//
-//			glMatrixMode(GL_PROJECTION);
-//			glLoadIdentity();
-//			glOrtho(0, WIDTH, HEIGHT, 0, 0, 1);
-//			glMatrixMode(GL_MODELVIEW);
-//			glDisable(GL_DEPTH_TEST);
+			glClearColor(0.95f, 0.65f, 0.75f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
 
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			//glClear löst das Problem, dass beim Neuzeichnen die alten Darstellungen nicht gelöscht werden
-
-
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+			glMatrixMode(GL_PROJECTION);
 			glLoadIdentity();
-			//glOrtho(0, WIDTH, HEIGHT, 0, 0, 1);
+			glOrtho(0, WIDTH, HEIGHT, 0, 0, 1);
 			glMatrixMode(GL_MODELVIEW);
 			glDisable(GL_DEPTH_TEST);
 
@@ -90,13 +81,67 @@ public class AgentSystem extends LWJGLBasisFenster {
 				aktAgent.render();
 				aktAgent.update(diff);
 			}
-
+			updateMouse();
 			Display.update();
 		}
 	}
 
+
+
+	public Vektor2D mousePosition() {
+		return new Vektor2D(Mouse.getX(), Display.getDisplayMode().getHeight() - Mouse.getY());
+	}
+
+	public void updateMouse() {
+
+		if (mouseDown == 0) {
+			if (Mouse.isButtonDown(0) == true) {
+				mouseDown = 1;
+				currentMousePositionPress = mousePosition();
+			}
+		} else if (mouseDown == 1) {
+			if (Mouse.isButtonDown(0) == false) {
+				mouseDown = 0;
+				currentMousePositionRelease = mousePosition();
+				checkCollisions(currentMousePositionPress,currentMousePositionRelease);
+			}
+		}
+	}
+
+	public void checkCollisions(Vektor2D press, Vektor2D release){
+		Line2D.Double check = new Line2D.Double();
+		check.x1 = press.x;
+		check.y1 = press.y;
+		check.x2 = release.x;
+		check.y2 = release.y;
+
+
+
+		//Das funktioniert so überhaupt nicht. Ziel war es, für die aktuellen Positionen der Agenten zu prüfen, ob sie
+		//auf der gezogenen Linie liegen. Allerdings finde ich keine Möglichkeit, die Position des Agenten zu ermitteln
+		//und in einem Punkt zu speichern.
+
+		for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
+//			Point2D agentlocation = new Point2D() {
+//				setLocation(double position.x, position.y) {
+//				}
+//			//}
+			//if (check.contains(agentlocation) {
+				//Agent aktAgent = agentenSpielwiese.getAgent(i);
+				//agentenSpielwiese.entfernePartikel(aktAgent);
+			//}
+
+
+			//agent.setPosition(new Vektor2D(-100, -100));
+
+
+		}
+
+	}
+
+
 	public static void main(String[] args) {
-       new AgentSystem("vividus Verlag. Dino-Buch. Kap. 1 (particle_version13_focus_on_swarm): AgentSystem.java",
+       new AgentSystem("CGV2 Beleg",
              1600, 900).start();
 	}
 }

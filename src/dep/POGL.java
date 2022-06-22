@@ -311,6 +311,15 @@ public class POGL {
 //		// *****************************************************************
 	}
 
+	public static void renderSwarmObjectWithoutForcesllllmao(float x, float y, int radius, Vektor2D velocity, Vektor2D acceleration) {
+		glLoadIdentity();
+		glTranslated(x, y, 0);
+
+		glColor4f(1, 1, 1, 1);
+		renderKreis(0, 0, 5, radius);
+		glColor4f(0, 0, 0, 1);
+		renderKreis(0, 0, 5, radius-2);
+	}
 
 
 
