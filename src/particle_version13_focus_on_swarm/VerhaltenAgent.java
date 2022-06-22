@@ -15,10 +15,10 @@ public class VerhaltenAgent implements Verhalten {
 	@Override
 	public void update(double time) {
 		Vektor2D mausForce = steering.forceMousePosition(agent.position);
-		mausForce.mult(100);
+		mausForce.mult(1000);
 		agent.applyForce(mausForce);
 		Vektor2D separationForce = steering.separation(agent, agent.SWARM_DISTANZ);
-		separationForce.mult(1);
+		separationForce.mult(10);
 		agent.applyForce(separationForce);
 		Vektor2D alignmentForce = steering.alignment(agent, agent.SWARM_DISTANZ);
 		alignmentForce.mult(0.12);

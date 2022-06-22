@@ -30,7 +30,7 @@ public class Steuerungsverhalten {
 	}
 
 	public Vektor2D mousePosition() {
-		return new Vektor2D(Mouse.getX(), Display.getDisplayMode().getHeight() - Mouse.getY());
+		return new Vektor2D(Mouse.getX(), Mouse.getY());
 	}
 	
 	public Vektor2D forceMousePosition(Vektor2D currentPosition) {

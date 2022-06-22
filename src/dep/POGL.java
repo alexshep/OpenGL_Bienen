@@ -1,5 +1,6 @@
 package dep;
 
+import org.lwjgl.opengl.Display;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 import org.lwjgl.util.vector.Vector4f;
@@ -272,12 +273,15 @@ public class POGL {
 
 
 	public static void renderModelWithForces(float x, float y, int radius, Vektor2D velocity, Vektor2D acceleration, Model object) {
-		glTranslated((float) x/1000, (float) y/1000, 0);
+		System.out.println(x+"     "+y);
+		glLoadIdentity();
+		glTranslated((x/Display.getWidth())*2-1, (y/Display.getHeight())*2-1, 0);
 		//System.out.println(position.x+"   "+position.y);
 		glRotatef( 90, 1, 0, 0);
-		glScaled(1./object.size, 1./object.size, 1./object.size);
-		glScaled(1./5, 1./5, 1./5);
-		glColor3d(0.1, .3 , 0.1);
+		glScaled(object.size, object.size, object.size);
+		//(1./5, 1./5, 1./5);
+		glColor3d(0.1, .3 , 0.5);
+		//glViewport(0,0,1600,900);
 
 		//glColor4f(0.5f, 1, 0.3f, 0.7f);
 		//renderKreis(0, 0, 5, radius);

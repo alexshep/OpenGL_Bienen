@@ -21,12 +21,12 @@ public class Agent extends BewegendesObjekt {
 		this.id = ++objCounter;
 
 		loadObjectVierecke("res/TorusQuads.obj");
-		object.size = 1.5f;
+		object.size = 0.1f;
 
 		setMass(0.5);
 		setMaxSpeed(100);
 		setMaxTurnRate(40);
-		setSwarmDistanz(50);
+		setSwarmDistanz(10);
 
 		setWegHistorie(new Weg2DDynamisch(20));
 	}
