@@ -14,19 +14,21 @@ public class Agent extends BewegendesObjekt {
 	private static int objCounter = 0;
 	public ObjektManager objektManager;
 	Model object = null;
+	boolean isALive;
 
 
 	public Agent(Vektor2D position, Vektor2D velocity, int radius, float r, float g, float b) {
 		super(position, velocity);
 		this.id = ++objCounter;
+		isALive = true;
 
 		loadObjectVierecke("res/TorusQuads.obj");
-		object.size = 0.1f;
+		object.size = 0.02f;
 
 		setMass(0.5);
-		setMaxSpeed(100);
-		setMaxTurnRate(40);
-		setSwarmDistanz(10);
+		setMaxSpeed(200);
+		setMaxTurnRate(100);
+		setSwarmDistanz(40);
 
 		setWegHistorie(new Weg2DDynamisch(20));
 	}
@@ -37,13 +39,17 @@ public class Agent extends BewegendesObjekt {
 
 	@Override
 	public void render() {
-		//POGL.renderKreis((float) position.x, (float) position.y, 5, 20);
-		//POGL.renderSwarmObjectWithForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration());
-
 		POGL.renderModelWithForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration(), object);
 	}
 
-	//eigener Bullshit
+
+
+	public Boolean getAgentStatus() {return isALive;}
+
+	public void killAgent() {
+		isALive = false;
+	}
+
 
 	public boolean loadObjectVierecke(String fileName) {
 		try {
@@ -56,9 +62,4 @@ public class Agent extends BewegendesObjekt {
 		}
 		return false;
 	}
-
-
-
-
-
 }

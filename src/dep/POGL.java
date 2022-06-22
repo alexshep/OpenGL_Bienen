@@ -273,7 +273,6 @@ public class POGL {
 
 
 	public static void renderModelWithForces(float x, float y, int radius, Vektor2D velocity, Vektor2D acceleration, Model object) {
-		System.out.println(x+"     "+y);
 		glLoadIdentity();
 		glTranslated((x/Display.getWidth())*2-1, (y/Display.getHeight())*2-1, 0);
 		//System.out.println(position.x+"   "+position.y);
