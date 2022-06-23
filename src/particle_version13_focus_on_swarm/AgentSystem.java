@@ -119,20 +119,16 @@ public class AgentSystem extends LWJGLBasisFenster {
         prepareShader();
         FrameBuffers fbos = new FrameBuffers();
         FrameBuffers fbosBoden = new FrameBuffers();
-        FrameBuffers fbosprim = new FrameBuffers();
-        int tex_QUAPPE = 0;
-        int tex_FISCH = 0;
-        int tex_Futter = 0;
-        int tex_Stein = 0;
-        int tex_Pflanze = 0;
+
         int tex_Sand = 0;
+        int tex_Biene = 0;
         int tex_buffer = 0;
-        int tex_BodenPrim = 0;
         int tex_BodenModel = 0;
 
         // einladen der Texturen
         try {
             tex_Sand = TexturLoader.loadTexture("res/Sand.png");
+            tex_Biene = TexturLoader.loadTexture("res/Biene.png");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -161,16 +157,8 @@ public class AgentSystem extends LWJGLBasisFenster {
             POGL.renderTeich();
 
             fbosBoden.unbindCurrentFrameBuffer();
-
-
             tex_BodenModel = fbosBoden.getTexture();
 
-
-            fbosprim.bindFrameBuffer();
-
-            glLoadIdentity();
-            glBindTexture(GL_TEXTURE_2D, tex_Sand);
-            POGL.renderTeich();
 
 
             long now = System.nanoTime();
@@ -179,7 +167,7 @@ public class AgentSystem extends LWJGLBasisFenster {
             last = now;
 
 
-            fbos.bindFrameBuffer(); // Framebuffer hinzu
+            fbos.bindFrameBuffer();
             glLoadIdentity();
 
             glUseProgram(ShaderProgramm);
@@ -204,14 +192,19 @@ public class AgentSystem extends LWJGLBasisFenster {
             glEnd();
 
 
+
             for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
+                glBindTexture(GL_TEXTURE_2D, tex_Biene);
                 Agent aktAgent = agentenSpielwiese.getAgent(i);
 
                 aktAgent.render();
                 aktAgent.update(diff);
             }
 
-			mouse.render();
+            glBindTexture(GL_TEXTURE_2D, tex_Biene);
+            mouse.render();
+
+
 
 
 			fbos.unbindCurrentFrameBuffer();// framebuffer weg
@@ -239,6 +232,8 @@ public class AgentSystem extends LWJGLBasisFenster {
             glTexCoord2f(0, 1);
             glVertex3f(-Display.getWidth() / 2, Display.getHeight() / 2, 0.0f);
             glEnd();
+
+
 
             glUseProgram(0);
             Display.update();
