@@ -323,4 +323,23 @@ public class POGL {
 		glColor3d(0.1, .3, 0.5);
 		renderObjectVierecke(object);
 	}
+
+	public static void renderTeich() {
+		glLoadIdentity();
+		glTranslated(0, 0, -20);
+		renderViereckMitTexturbindung();
+	}
+
+	public static void renderViereckMitTexturbindung() {
+		glBegin(GL_QUADS);
+		glTexCoord2f(0, 0);
+		glVertex3f(-Display.getWidth(), -Display.getHeight(), 0.0f);
+		glTexCoord2f(1, 0);
+		glVertex3f(Display.getWidth(), -Display.getHeight(), 0.0f);
+		glTexCoord2f(1, 1);
+		glVertex3f(Display.getWidth(), Display.getHeight(), 0.0f);
+		glTexCoord2f(0, 1);
+		glVertex3f(-Display.getWidth(), Display.getHeight(), 0.0f);
+		glEnd();
+	}
 }
