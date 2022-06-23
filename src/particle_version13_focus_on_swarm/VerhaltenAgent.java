@@ -61,9 +61,9 @@ public class VerhaltenAgent implements Verhalten {
 
 			Vektor2D mousepos = new Vektor2D(Mouse.getX(), Mouse.getY());
 
-			if (LineareAlgebra.euklDistanz(agent.position, mousepos) < 15) {
-				agent.killAgent();
-				agent.setPosition(new Vektor2D(-100, -100));
+			if (LineareAlgebra.euklDistanz(agent.position, mousepos) < 25) {
+				agent.killAgent(); //können sich nicht mehr bewegen
+				agent.setPosition(new Vektor2D(-50, -50)); //feste Position außerhalb des Sichtfelds
 			}
 		}
 	}

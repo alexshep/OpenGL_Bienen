@@ -22,8 +22,8 @@ public class Agent extends BewegendesObjekt {
 		this.id = ++objCounter;
 		isALive = true;
 
-		loadObjectVierecke("res/TorusQuads.obj");
-		object.size = 0.02f;
+		loadObjectVierecke("res/finalbee2.obj");
+		object.size = 0.015f;
 
 		setMass(0.5);
 		setMaxSpeed(200);
@@ -32,6 +32,8 @@ public class Agent extends BewegendesObjekt {
 
 		setWegHistorie(new Weg2DDynamisch(20));
 	}
+
+
 
 	public void setObjektManager(ObjektManager objektManager) {
 		this.objektManager = objektManager;

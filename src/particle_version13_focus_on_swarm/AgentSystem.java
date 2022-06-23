@@ -11,6 +11,7 @@ public class AgentSystem extends LWJGLBasisFenster {
 	private ObjektManager agentenSpielwiese;
 	private double runningAverageFrameTime = 1/60, avgRatio = 0.75;
 	private long last = System.nanoTime();
+	private MousePointer mouse;
 
 
 	public AgentSystem(String title, int width, int height) {
@@ -20,6 +21,7 @@ public class AgentSystem extends LWJGLBasisFenster {
 		initDisplay();
 		agentenSpielwiese = ObjektManager.getExemplar();
 		erzeugeAgenten(20);
+		erzeugeMausPointer();
 	}
 
 
@@ -35,6 +37,15 @@ public class AgentSystem extends LWJGLBasisFenster {
 			agentenSpielwiese.registrierePartikel(agent);
 		}
 	}
+
+
+	private void erzeugeMausPointer() {
+		Random rand = ThreadLocalRandom.current();
+
+		mouse = new MousePointer(
+				new Vektor2D(rand.nextInt(WIDTH), rand.nextInt(HEIGHT)), new Vektor2D(rand.nextFloat()*1, rand.nextFloat()*1), 10,0.5f, 0.2f, 0.4f);
+	}
+
 
 	public int getCurrFPS() {
 		return (int) (1 / runningAverageFrameTime);
@@ -72,6 +83,7 @@ public class AgentSystem extends LWJGLBasisFenster {
 				aktAgent.render();
 				aktAgent.update(diff);
 			}
+			mouse.render();
 			Display.update();
 		}
 	}

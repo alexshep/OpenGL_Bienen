@@ -314,7 +314,13 @@ public class POGL {
 //		// *****************************************************************
 	}
 
-
-
-
+	public static void renderMouseModel(float x, float y, Model object) {
+		glLoadIdentity();
+		glTranslated((x / Display.getWidth()) * 2 - 1, (y / Display.getHeight()) * 2 - 1, 0);
+		//System.out.println(position.x+"   "+position.y);
+		glRotatef(90, 1, 0.5f, 0);
+		glScaled(object.size, object.size, object.size);
+		glColor3d(0.1, .3, 0.5);
+		renderObjectVierecke(object);
+	}
 }
