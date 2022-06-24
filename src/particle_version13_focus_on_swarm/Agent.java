@@ -22,7 +22,7 @@ public class Agent extends BewegendesObjekt {
 		this.id = ++objCounter;
 		isALive = true;
 
-		loadObjectVierecke("res/Quappe_tex.obj");
+		loadObjectVierecke("res/finalbee2.obj");
 		object.size = 0.015f;
 
 		setMass(0.5);
