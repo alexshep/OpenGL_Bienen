@@ -8,8 +8,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static org.lwjgl.opengl.GL11.*;
-
 public class Agent extends BewegendesObjekt {
 	private static int objCounter = 0;
 	public ObjektManager objektManager;
