@@ -3,7 +3,6 @@ package particle_version13_focus_on_swarm;
 import dep.LineareAlgebra;
 import dep.Vektor2D;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.Display;
 
 public class VerhaltenAgent implements Verhalten {
 	private Agent agent;

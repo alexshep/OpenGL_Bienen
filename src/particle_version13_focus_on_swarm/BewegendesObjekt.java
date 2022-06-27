@@ -14,8 +14,6 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 	public double MAX_SPEED;
 	public double MAX_TURN_RATE;
 	public double SWARM_DISTANZ;
-	public int WIDTH;
-	public int HEIGHT;
 	public Weg2DDynamisch wegHistorie;
 	
 	public Verhalten verhalten = null;
@@ -25,10 +23,6 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 		this.velocity = new Vektor2D(velocity);
 		this.acceleration = new Vektor2D(0, 0);		
 		this.lastAcceleration = new Vektor2D(0, 0);	
-	}
-	
-	public double getMass() {
-		return MASS;
 	}
 
 	public void setMass(double mass) {
@@ -54,11 +48,7 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 	public void setSwarmDistanz(double dist) {
 		this.SWARM_DISTANZ = dist;
 	}
-	
-	public double getSwarmDistanz( ) {
-		return SWARM_DISTANZ;
-	}
-	
+
 	public Weg2DDynamisch getWegHistorie() {
 		return wegHistorie;
 	}
@@ -66,37 +56,13 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 	public void setWegHistorie(Weg2DDynamisch wegHistorie) {
 		this.wegHistorie = wegHistorie;
 	}
-	
-	public Vektor2D getHeading() {
-		return heading;
-	}
 
 	public void setHeading(Vektor2D heading) {
 		this.heading = heading;
 	}
 
-	public Vektor2D getSide() {
-		return side;
-	}
-
 	public void setSide(Vektor2D side) {
 		this.side = side;
-	}
-
-	public int getWidth() {
-		return WIDTH;
-	}
-
-	public void setWidth(int width) {
-		this.WIDTH = width;
-	}
-
-	public int getHeight() {
-		return HEIGHT;
-	}
-
-	public void setHeight(int height) {
-		this.HEIGHT = height;
 	}
 
 	public void resetAcceleration() {
@@ -111,11 +77,7 @@ public abstract class BewegendesObjekt extends BasisObjekt {
 	public Vektor2D getLastAcceleration() {		
 		return lastAcceleration;
 	}
-	
-	public Vektor2D getAcceleration() {		
-		return acceleration;
-	}
-	
+
 	public Vektor2D getAccelerationInRespectToMass() {
 		return LineareAlgebra.div(acceleration, MASS);
 	}

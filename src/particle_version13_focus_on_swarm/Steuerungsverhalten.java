@@ -3,14 +3,9 @@ package particle_version13_focus_on_swarm;
 import dep.LineareAlgebra;
 import dep.Vektor2D;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.Display;
-
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Steuerungsverhalten {
 	public Vektor2D acceleration;
-	private Random zuf = ThreadLocalRandom.current();
 
 	public Steuerungsverhalten() {
 		acceleration = new Vektor2D(0, 0);
@@ -18,15 +13,6 @@ public class Steuerungsverhalten {
 
 	public void resetAcceleration() {
 		acceleration.mult(0);
-	}
-
-	public void applyForce(Vektor2D force) {
-		Vektor2D forceHelp = new Vektor2D(force);
-		acceleration.add(forceHelp);
-	}
-
-	public Vektor2D randomForce() {
-		return new Vektor2D(zuf.nextFloat()*10-5, zuf.nextFloat()*10-5);
 	}
 
 	public Vektor2D mousePosition() {
@@ -96,7 +82,6 @@ public class Steuerungsverhalten {
 					steeringForce.add(LineareAlgebra.sub(bObjF.position, me.position));
 			}
 		}
-
 		LineareAlgebra.normalize(steeringForce);
 		return steeringForce;
 	}

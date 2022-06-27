@@ -47,10 +47,6 @@ public class AgentSystem extends LWJGLBasisFenster {
 	}
 
 
-	public int getCurrFPS() {
-		return (int) (1 / runningAverageFrameTime);
-	}
-
 	@Override
 	public void renderLoop() {
 		//glEnable(GL_DEPTH_TEST);
@@ -67,15 +63,12 @@ public class AgentSystem extends LWJGLBasisFenster {
 			runningAverageFrameTime = avgRatio * runningAverageFrameTime + (1 - avgRatio) * diff;
 			last = now;
 
-
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //			//glClear löst das Problem, dass beim Neuzeichnen die alten Darstellungen nicht gelöscht werden
 			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			glLoadIdentity();
 			glMatrixMode(GL_MODELVIEW);
 			glDisable(GL_DEPTH_TEST);
-
-
 
 			for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
 				Agent aktAgent = agentenSpielwiese.getAgent(i);
