@@ -78,8 +78,8 @@ public class AgentSystem extends LWJGLBasisFenster {
     @Override
     public void renderLoop() {
         prepareShader();
-        FrameBuffers fb = new FrameBuffers();
-        FrameBuffers fbHintergrund = new FrameBuffers();
+        FrameBuffer fb = new FrameBuffer();
+        FrameBuffer fbHintergrund = new FrameBuffer();
 
 
         int tex_Sand = 0;

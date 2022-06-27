@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL32;
 
 import java.nio.ByteBuffer;
 
-public class FrameBuffers {
+public class FrameBuffer {
 
 	protected static final int REFLECTION_WIDTH = 1920;
 	private static final int REFLECTION_HEIGHT = 800;
@@ -16,7 +16,7 @@ public class FrameBuffers {
 	private int Texture;
 
 
-	public FrameBuffers() {//call when loading the game
+	public FrameBuffer() {//call when loading the game
 		initialiseFrameBuffer();
 	}
 
