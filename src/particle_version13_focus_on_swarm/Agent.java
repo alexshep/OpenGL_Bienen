@@ -35,6 +35,6 @@ public class Agent extends BewegendesObjekt {
 
 	@Override
 	public void render() {
-		POGL.renderSwarmObjectWithoutForcesllllmao((float) position.x, (float) position.y, 10, velocity, getLastAcceleration());
+		POGL.renderSwarmObjectWithoutForces((float) position.x, (float) position.y, 10, velocity, getLastAcceleration());
 	}
 }
