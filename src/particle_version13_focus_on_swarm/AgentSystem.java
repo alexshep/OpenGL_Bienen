@@ -2,26 +2,20 @@ package particle_version13_focus_on_swarm;
 
 import dep.LWJGLBasisFenster;
 import dep.Vektor2D;
-import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 
-import java.awt.geom.Line2D;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static org.lwjgl.opengl.GL11.*;
 
 public class AgentSystem extends LWJGLBasisFenster {
-	private ObjektManager agentenSpielwiese;
-	private double runningAverageFrameTime = 1/60, avgRatio = 0.75;
+	private final ObjektManager agentenSpielwiese;
+	private double runningAverageFrameTime = 1/60;
+	private final double avgRatio = 0.75;
 	private long last = System.nanoTime();
 
 
-
-
-	Vektor2D currentMousePositionPress;
-	Vektor2D currentMousePositionRelease;
-	int mouseDown = 0;
 
 
 	public AgentSystem(String title, int width, int height) {
@@ -43,10 +37,6 @@ public class AgentSystem extends LWJGLBasisFenster {
 			agent.setObjektManager(agentenSpielwiese);
 			agentenSpielwiese.registrierePartikel(agent);
 		}
-	}
-
-	public int getCurrFPS() {
-		return (int) (1 / runningAverageFrameTime);
 	}
 
 	@Override
@@ -81,62 +71,8 @@ public class AgentSystem extends LWJGLBasisFenster {
 				aktAgent.render();
 				aktAgent.update(diff);
 			}
-			updateMouse();
 			Display.update();
 		}
-	}
-
-
-
-	public Vektor2D mousePosition() {
-		return new Vektor2D(Mouse.getX(), Display.getDisplayMode().getHeight() - Mouse.getY());
-	}
-
-	public void updateMouse() {
-
-		if (mouseDown == 0) {
-			if (Mouse.isButtonDown(0) == true) {
-				mouseDown = 1;
-				currentMousePositionPress = mousePosition();
-			}
-		} else if (mouseDown == 1) {
-			if (Mouse.isButtonDown(0) == false) {
-				mouseDown = 0;
-				currentMousePositionRelease = mousePosition();
-				checkCollisions(currentMousePositionPress,currentMousePositionRelease);
-			}
-		}
-	}
-
-	public void checkCollisions(Vektor2D press, Vektor2D release){
-		Line2D.Double check = new Line2D.Double();
-		check.x1 = press.x;
-		check.y1 = press.y;
-		check.x2 = release.x;
-		check.y2 = release.y;
-
-
-
-		//Das funktioniert so überhaupt nicht. Ziel war es, für die aktuellen Positionen der Agenten zu prüfen, ob sie
-		//auf der gezogenen Linie liegen. Allerdings finde ich keine Möglichkeit, die Position des Agenten zu ermitteln
-		//und in einem Punkt zu speichern.
-
-		for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
-//			Point2D agentlocation = new Point2D() {
-//				setLocation(double position.x, position.y) {
-//				}
-//			//}
-			//if (check.contains(agentlocation) {
-				//Agent aktAgent = agentenSpielwiese.getAgent(i);
-				//agentenSpielwiese.entfernePartikel(aktAgent);
-			//}
-
-
-			//agent.setPosition(new Vektor2D(-100, -100));
-
-
-		}
-
 	}
 
 

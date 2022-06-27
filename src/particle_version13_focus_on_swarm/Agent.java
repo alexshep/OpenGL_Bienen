@@ -10,7 +10,6 @@ public class Agent extends BewegendesObjekt {
 	boolean isALive;
 
 
-
 	public Agent(Vektor2D position, Vektor2D velocity, int radius, float r, float g, float b) {
 		super(position, velocity);
 		this.id = ++objCounter;
@@ -37,13 +36,5 @@ public class Agent extends BewegendesObjekt {
 	@Override
 	public void render() {
 		POGL.renderSwarmObjectWithoutForcesllllmao((float) position.x, (float) position.y, 10, velocity, getLastAcceleration());
-
 	}
-
-
-
-
-
-
-
 }

@@ -112,6 +112,6 @@ public class Vektor3D {
 	}
 
 	public void show() {
-		System.out.println(toString());
+		System.out.println(this);
 	}
 }

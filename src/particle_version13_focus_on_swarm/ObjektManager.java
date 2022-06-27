@@ -3,8 +3,8 @@ package particle_version13_focus_on_swarm;
 import java.util.HashMap;
 
 public class ObjektManager {
-   private HashMap<Integer, Agent> partikel;
-   private static ObjektManager exemplar = new ObjektManager();
+   private final HashMap<Integer, Agent> partikel;
+   private static final ObjektManager exemplar = new ObjektManager();
 
    private ObjektManager() {
       partikel = new HashMap<Integer, Agent>();

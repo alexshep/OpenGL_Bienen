@@ -5,8 +5,8 @@ import dep.Vektor2D;
 import java.util.ArrayList;
 
 public class Weg2DDynamisch {
-	private ArrayList<Vektor2D> liste;
-	private int max;
+	private final ArrayList<Vektor2D> liste;
+	private final int max;
 	
 	public Weg2DDynamisch(int max) {
 		liste = new ArrayList<Vektor2D>();

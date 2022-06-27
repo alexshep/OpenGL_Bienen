@@ -6,8 +6,8 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 
 public class VerhaltenAgent implements Verhalten {
-	private Agent agent;
-	private Steuerungsverhalten steering;
+	private final Agent agent;
+	private final Steuerungsverhalten steering;
 
 	public VerhaltenAgent(Agent agent) {
 		this.agent = agent;

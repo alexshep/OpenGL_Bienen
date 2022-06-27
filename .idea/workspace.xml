@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14594ec0-4176-43b7-8ff9-d30c8eb7d498" name="Changes" comment="ja ok">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TorusQuads.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bee.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bee2.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjektAusViereckenLadenUndDrehen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schmutz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLBienenTextureTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dep/POGL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dep/POGL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/AgentSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/AgentSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/VerhaltenAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/VerhaltenAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Steuerungsverhalten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Steuerungsverhalten.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -43,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Alex/Desktop/Beleg5.0Abgabe",
+    "last_opened_file_path": "G:/Meine Ablage/000 Studium/HTW Dresden/6S SS22/CGV2/OpenGLBienenObject",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -60,7 +63,7 @@
   <component name="RunManager" selected="Application.AgentSystem">
     <configuration name="AgentSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="particle_version13_focus_on_swarm.AgentSystem" />
-      <module name="Schmutz" />
+      <module name="OpenGLBienenTextureTest" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="particle_version13_focus_on_swarm.*" />
@@ -73,7 +76,20 @@
     </configuration>
     <configuration name="ObjektAusViereckenLadenUndDrehen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ObjektAusViereckenLadenUndDrehen" />
-      <module name="Schmutz" />
+      <module name="OpenGLBienenTextureTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OpenGLBienenTextureTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OpenGLBienenTextureTest" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,7 +115,11 @@
       <workItem from="1655825316865" duration="46000" />
       <workItem from="1655825794452" duration="4174000" />
       <workItem from="1655830446599" duration="138000" />
-      <workItem from="1655885701253" duration="2938000" />
+      <workItem from="1655885701253" duration="3929000" />
+      <workItem from="1655894617772" duration="600000" />
+      <workItem from="1656255317998" duration="1699000" />
+      <workItem from="1656344762341" duration="3000" />
+      <workItem from="1656344883392" duration="923000" />
     </task>
     <task id="LOCAL-00001" summary="initial shit">
       <created>1655554739629</created>
@@ -192,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655810330117</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ja ok">
+      <created>1655891167521</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655891167521</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

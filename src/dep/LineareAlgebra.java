@@ -1,9 +1,9 @@
 package dep;
 
 public class LineareAlgebra {
-	private LineareAlgebra() {};
+	private LineareAlgebra() {}
 
-	public static Vektor2D add(Vektor2D vec1, Vektor2D vec2) {
+    public static Vektor2D add(Vektor2D vec1, Vektor2D vec2) {
 		return new Vektor2D(vec1.x + vec2.x, vec1.y + vec2.y);
 	}
 

@@ -100,7 +100,7 @@ public class Vektor2D {
 	}
 
 	public void show() {
-		System.out.println(toString());
+		System.out.println(this);
 	}
 	
 	public static void main(String[] args) {
