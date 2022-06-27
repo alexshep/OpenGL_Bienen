@@ -22,18 +22,12 @@ public class ObjektManager {
       partikel.put(new Integer(obj.id), obj);
    }
 
-   public void entfernePartikel(Agent obj) {
-      partikel.remove(obj);
-   }
-   
+
    public Agent getAgent(int objID) {
       return partikel.get(new Integer(objID));
    }
    
-   public HashMap<Integer, Agent> getPartikelMap() {
-      return partikel;
-   }
-   
+
    public int getAgentSize() {
       return partikel.size();
    }

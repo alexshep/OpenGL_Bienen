@@ -18,11 +18,7 @@ public class Weg2DDynamisch {
 		if (liste.size()>max)
 			liste.remove(liste.size()-1);
 	}
-	
-	public int getSize() {
-		return liste.size();
-	}
-	
+
 	public Vektor2D getElement(int index) {
 		return liste.get(index);
 	}

@@ -11,30 +11,18 @@ public class FrameBuffers {
 
 	protected static final int REFLECTION_WIDTH = 1920;
 	private static final int REFLECTION_HEIGHT = 800;
-	
-	protected static final int REFRACTION_WIDTH = 1280;
-	private static final int REFRACTION_HEIGHT = 720;
 
 	private int FrameBuffer;
 	private int Texture;
 
 
-
 	public FrameBuffers() {//call when loading the game
 		initialiseFrameBuffer();
-		
-	}
-
-	public void cleanUp() {//call when closing the game
-		GL30.glDeleteFramebuffers(FrameBuffer);
-		GL11.glDeleteTextures(Texture);
-	
 	}
 
 	public void bindFrameBuffer() {//call before rendering to this FBO
 		bindFrameBuffer(FrameBuffer,REFLECTION_WIDTH,REFLECTION_HEIGHT);
 	}
-	
 
 	
 	public void unbindCurrentFrameBuffer() {//call to switch to default frame buffer
@@ -46,16 +34,12 @@ public class FrameBuffers {
 		return Texture;
 	}
 
-	
-
 
 	private void initialiseFrameBuffer() {
 		FrameBuffer = createFrameBuffer();
 		Texture = createTextureAttachment(REFLECTION_WIDTH,REFLECTION_HEIGHT);
 		
 		unbindCurrentFrameBuffer();
-	
-	
 	}
 	
 
@@ -77,7 +61,6 @@ public class FrameBuffers {
 		
 		
 		return frameBuffer;
-		
 	}
 
 	private int createTextureAttachment( int width, int height) {
@@ -92,9 +75,5 @@ public class FrameBuffers {
 				texture, 0);
 		return texture;
 	}
-	
-	
-	
-
 }
 

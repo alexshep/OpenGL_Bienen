@@ -7,7 +7,7 @@
     <file url="file://$PROJECT_DIR$/src/dep/LineareAlgebra.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/dep/Model.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/dep/POGL.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/dep/ShaderUtilities.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/dep/ShaderUtil.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/dep/Torus.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/dep/Vektor2D.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/dep/Vektor3D.java" charset="windows-1252" />

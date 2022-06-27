@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14594ec0-4176-43b7-8ff9-d30c8eb7d498" name="Changes" comment="initial shit">
+    <list default="true" id="14594ec0-4176-43b7-8ff9-d30c8eb7d498" name="Changes" comment="cleanup">
+      <change afterPath="$PROJECT_DIR$/res/Wiese.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schmutz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OpenGLBienenTextureTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dep/FrameBuffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dep/FrameBuffers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dep/POGL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dep/POGL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dep/ShaderUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dep/ShaderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dep/TexturLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dep/TexturLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dep/Torus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/AgentSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/AgentSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/ObjektManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/ObjektManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Steuerungsverhalten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Steuerungsverhalten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/VerhaltenAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/VerhaltenAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Weg2DDynamisch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle_version13_focus_on_swarm/Weg2DDynamisch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -25,31 +52,62 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/Schmutz/libs/lwjgl2/natives-win",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "G:/Meine Ablage/000 Studium/HTW Dresden/6S SS22/CGV2/OpenGLBienenObject",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Schmutz\src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dep" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AgentSystem">
+    <configuration name="AgentSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="particle_version13_focus_on_swarm.AgentSystem" />
+      <module name="OpenGLBienenTextureTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="particle_version13_focus_on_swarm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ObjektAusViereckenLadenUndDrehen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ObjektAusViereckenLadenUndDrehen" />
-      <module name="Schmutz" />
+      <module name="OpenGLBienenTextureTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OpenGLBienenTextureTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OpenGLBienenTextureTest" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AgentSystem" />
         <item itemvalue="Application.ObjektAusViereckenLadenUndDrehen" />
       </list>
     </recent_temporary>
@@ -62,7 +120,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655554104594</updated>
-      <workItem from="1655554106464" duration="1962000" />
+      <workItem from="1655554106464" duration="10156000" />
+      <workItem from="1655803090016" duration="94000" />
+      <workItem from="1655803431566" duration="206000" />
+      <workItem from="1655824479545" duration="2448000" />
+      <workItem from="1655882885039" duration="4753000" />
+      <workItem from="1655894420001" duration="796000" />
+      <workItem from="1655982874847" duration="6822000" />
+      <workItem from="1655992114585" duration="4234000" />
+      <workItem from="1656254603741" duration="477000" />
+      <workItem from="1656255095428" duration="7607000" />
+      <workItem from="1656344866069" duration="2070000" />
     </task>
     <task id="LOCAL-00001" summary="initial shit">
       <created>1655554739629</created>
@@ -85,7 +153,105 @@
       <option name="project" value="LOCAL" />
       <updated>1655554938820</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor">
+      <created>1655556373502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655556373502</updated>
+    </task>
+    <task id="LOCAL-00005" summary="gitognore">
+      <created>1655556793945</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655556793945</updated>
+    </task>
+    <task id="LOCAL-00006" summary="bee triangulated">
+      <created>1655557340207</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655557340207</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mehr stuff hinzugefügt">
+      <created>1655557976248</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655557976248</updated>
+    </task>
+    <task id="LOCAL-00008" summary="mehr stuff hinzugefügt">
+      <created>1655559395381</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655559395381</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mehr stuff hinzugefügt">
+      <created>1655560497752</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655560497752</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mehr stuff hinzugefügt">
+      <created>1655561238410</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655561238410</updated>
+    </task>
+    <task id="LOCAL-00011" summary="minimal build oder so. kannst du eigentlich keinem zeigen">
+      <created>1655564035508</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655564035508</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Darstellung gefixt, Koordinaten passen dies das">
+      <created>1655892161634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655892161634</updated>
+    </task>
+    <task id="LOCAL-00013" summary="render multiple agents, killing mechanic">
+      <created>1655895208816</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655895208817</updated>
+    </task>
+    <task id="LOCAL-00014" summary="mouse pointer implemented, correct models">
+      <created>1655991852782</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655991852782</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Shader und Bodentextur">
+      <created>1655993111479</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655993111479</updated>
+    </task>
+    <task id="LOCAL-00016" summary="cleanup">
+      <created>1655995276044</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655995276045</updated>
+    </task>
+    <task id="LOCAL-00017" summary="cleanup">
+      <created>1655996347290</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655996347290</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,7 +269,18 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial shit" />
+    <MESSAGE value="refactor" />
+    <MESSAGE value="gitognore" />
+    <MESSAGE value="bee triangulated" />
+    <MESSAGE value="mehr stuff hinzugefügt" />
+    <MESSAGE value="minimal build oder so. kannst du eigentlich keinem zeigen" />
+    <MESSAGE value="Darstellung gefixt, Koordinaten passen dies das" />
+    <MESSAGE value="render multiple agents, killing mechanic" />
+    <MESSAGE value="mouse pointer implemented, correct models" />
+    <MESSAGE value="Shader und Bodentextur" />
+    <MESSAGE value="cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
 </project>

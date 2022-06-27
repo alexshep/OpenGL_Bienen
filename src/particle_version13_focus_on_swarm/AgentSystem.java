@@ -8,8 +8,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL13.GL_TEXTURE0;
-import static org.lwjgl.opengl.GL13.glActiveTexture;
+import static org.lwjgl.opengl.GL13.*;
 import static org.lwjgl.opengl.GL20.*;
 
 public class AgentSystem extends LWJGLBasisFenster {
@@ -19,7 +18,7 @@ public class AgentSystem extends LWJGLBasisFenster {
     private MousePointer mouse;
     private int ShaderProgramm;
     private int uniform_fragShader_tex1;
-	private static String fragShaderSource = ""
+	private static String fragShaderCode = ""
 			+ "uniform sampler2D tex1;"
 			+ "void main() { "
 			+ "   gl_FragColor =  texture2D(tex1, gl_TexCoord[0].st); " + "}";
@@ -55,20 +54,16 @@ public class AgentSystem extends LWJGLBasisFenster {
 
     private void erzeugeMausPointer() {
         Random rand = ThreadLocalRandom.current();
-
         mouse = new MousePointer(
                 new Vektor2D(rand.nextInt(WIDTH), rand.nextInt(HEIGHT)), new Vektor2D(rand.nextFloat() * 1, rand.nextFloat() * 1), 10, 0.5f, 0.2f, 0.4f);
     }
 
-    public int getCurrFPS() {
-        return (int) (1 / runningAverageFrameTime);
-    }
 
     private void prepareShader() {
         ShaderProgramm = glCreateProgram();
 
         int fragShader = glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fragShader, fragShaderSource);
+        glShaderSource(fragShader, fragShaderCode);
         glCompileShader(fragShader);
         System.out.println(glGetShaderInfoLog(fragShader, 1024));
         glAttachShader(ShaderProgramm, fragShader);
@@ -77,57 +72,24 @@ public class AgentSystem extends LWJGLBasisFenster {
         uniform_fragShader_tex1 = glGetUniformLocation(ShaderProgramm, "tex1");
         glUseProgram(ShaderProgramm);
 
-        ShaderUtilities.testShaderProgram(ShaderProgramm);
+        ShaderUtil.testShaderProgram(ShaderProgramm);
     }
 
     @Override
     public void renderLoop() {
-        //glEnable(GL_DEPTH_TEST);
-
-/*		while (!Display.isCloseRequested()) {
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-			long now = System.nanoTime();
-			double diff = (now - last) / 1e9;
-			runningAverageFrameTime = avgRatio * runningAverageFrameTime + (1 - avgRatio) * diff;
-			last = now;
-
-
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//			//glClear löst das Problem, dass beim Neuzeichnen die alten Darstellungen nicht gelöscht werden
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-			glLoadIdentity();
-			glMatrixMode(GL_MODELVIEW);
-			glDisable(GL_DEPTH_TEST);
-
-
-
-			for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
-				Agent aktAgent = agentenSpielwiese.getAgent(i);
-
-				aktAgent.render();
-				aktAgent.update(diff);
-			}
-			mouse.render();
-			Display.update();
-		}*/
-
         prepareShader();
-        FrameBuffers fbos = new FrameBuffers();
-        FrameBuffers fbosBoden = new FrameBuffers();
+        FrameBuffers fb = new FrameBuffers();
+        FrameBuffers fbHintergrund = new FrameBuffers();
+
 
         int tex_Sand = 0;
         int tex_Biene = 0;
         int tex_buffer = 0;
-        int tex_BodenModel = 0;
+        int tex_Hintergrund = 0;
 
-        // einladen der Texturen
+        //Texturen laden
         try {
-            tex_Sand = TexturLoader.loadTexture("res/Sand.png");
+            tex_Sand = TexturLoader.loadTexture("res/Wiese.png");
             tex_Biene = TexturLoader.loadTexture("res/Biene.png");
         } catch (IOException e) {
             // TODO Auto-generated catch block
@@ -150,15 +112,19 @@ public class AgentSystem extends LWJGLBasisFenster {
             }
 
 
-            fbosBoden.bindFrameBuffer();
+            //Hintergrund auf ein Quad rendern, was den gesamten Bildschirm füllt
+
+            fbHintergrund.bindFrameBuffer();
 
             glLoadIdentity();
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
             glBindTexture(GL_TEXTURE_2D, tex_Sand);
-            POGL.renderTeich();
+            POGL.renderWiese();
 
-            fbosBoden.unbindCurrentFrameBuffer();
-            tex_BodenModel = fbosBoden.getTexture();
+            fbHintergrund.unbindCurrentFrameBuffer();
 
+            //Hintergrund jetzt als Textur in der passenden Größe verfügbar
+            tex_Hintergrund = fbHintergrund.getTexture();
 
 
             long now = System.nanoTime();
@@ -166,16 +132,16 @@ public class AgentSystem extends LWJGLBasisFenster {
             runningAverageFrameTime = avgRatio * runningAverageFrameTime + (1 - avgRatio) * diff;
             last = now;
 
+            fb.bindFrameBuffer();
 
-            fbos.bindFrameBuffer();
             glLoadIdentity();
 
             glUseProgram(ShaderProgramm);
 
-            //Teich
-
-            glBindTexture(GL_TEXTURE_2D, tex_BodenModel);
-
+            //Hintergrund in Szene einbringen
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, tex_Hintergrund);
 
             glTranslated(Display.getWidth() / 2, Display.getHeight() / 2, -20);
             glRotatef(180, 1, 0, 0);
@@ -192,11 +158,19 @@ public class AgentSystem extends LWJGLBasisFenster {
             glEnd();
 
 
+            //Agenten mit Textur rendern
+
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glActiveTexture(GL_TEXTURE1);
 
             for (int i = 1; i <= agentenSpielwiese.getAgentSize(); i++) {
+                //absolut keine Ahnung, warum hier nichts geht
+                glBindTexture(GL_TEXTURE_2D, 0);
                 glBindTexture(GL_TEXTURE_2D, tex_Biene);
+                //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, WIDTH, HEIGHT, 0, GL_RGB, GL_UNSIGNED_BYTE, null);
+                //glGenerateMipmap(GL_TEXTURE_2D);
+                //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
                 Agent aktAgent = agentenSpielwiese.getAgent(i);
-
                 aktAgent.render();
                 aktAgent.update(diff);
             }
@@ -204,14 +178,13 @@ public class AgentSystem extends LWJGLBasisFenster {
             glBindTexture(GL_TEXTURE_2D, tex_Biene);
             mouse.render();
 
+			fb.unbindCurrentFrameBuffer();// naus mit de framebuffer
 
+            glBindTexture(GL_TEXTURE_2D, 0);
 
+            //gesamte Szene in einem Texturbuffer speichern
 
-			fbos.unbindCurrentFrameBuffer();// framebuffer weg
-            glBindTexture(GL_TEXTURE_2D, 0);// fertig mit texturen
-
-            tex_buffer = fbos.getTexture();
-
+            tex_buffer = fb.getTexture();
 
             glActiveTexture(GL_TEXTURE0); // activate texture unit 0
             glBindTexture(GL_TEXTURE_2D, tex_buffer); // bind texture
@@ -221,6 +194,8 @@ public class AgentSystem extends LWJGLBasisFenster {
 
             glTranslated(Display.getWidth() / 2, Display.getHeight() / 2, 0);
             glRotatef(180, 1, 0, 0);
+
+            //gesamte Szene aus dem Texturbuffer auf ein Quad rendern
 
             glBegin(GL_QUADS);
             glTexCoord2f(0, 0);
@@ -233,11 +208,8 @@ public class AgentSystem extends LWJGLBasisFenster {
             glVertex3f(-Display.getWidth() / 2, Display.getHeight() / 2, 0.0f);
             glEnd();
 
-
-
             glUseProgram(0);
             Display.update();
-
         }
     }
 }

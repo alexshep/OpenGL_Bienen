@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Schmutz.iml" filepath="$PROJECT_DIR$/Schmutz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenGLBienenTextureTest.iml" filepath="$PROJECT_DIR$/OpenGLBienenTextureTest.iml" />
     </modules>
   </component>
 </project>
